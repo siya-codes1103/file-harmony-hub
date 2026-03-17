@@ -52,8 +52,8 @@ const Signup = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      toast.success("Account created successfully!");
-      navigate("/onboarding");
+      toast.success("Account created! Please verify your email.");
+      navigate("/verify-email");
     }, 1200);
   };
 
