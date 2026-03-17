@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, Compass, FolderOpen, GraduationCap, Settings, Bell, User, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, Users, Compass, FolderOpen, GraduationCap, Users2, UserCircle, Settings, Bell, User, ChevronLeft, ChevronRight } from "lucide-react";
 
 const navItems = [
   { to: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
@@ -8,6 +8,8 @@ const navItems = [
   { to: "/onboarding", icon: Compass, label: "Onboarding" },
   { to: "/resources", icon: FolderOpen, label: "Resources" },
   { to: "/training", icon: GraduationCap, label: "Training" },
+  { to: "/community", icon: Users2, label: "Community" },
+  { to: "/profile-setup", icon: UserCircle, label: "Profile" },
   { to: "/settings", icon: Settings, label: "Settings" },
 ];
 
