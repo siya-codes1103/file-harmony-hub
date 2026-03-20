@@ -37,6 +37,8 @@ const App = () => (
           <Route path="/unauthorized" element={<Unauthorized />} />
           <Route path="/verify-email" element={<EmailVerification />} />
           <Route path="/profile-setup" element={<ProfileSetup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/session-expired" element={<SessionExpired />} />
 
           {/* Dashboard Pages with Sidebar */}
           <Route element={<DashboardLayout />}>
