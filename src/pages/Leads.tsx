@@ -39,6 +39,7 @@ const Leads = () => {
   const [leads] = useState<Lead[]>(initialLeads);
   const [search, setSearch] = useState("");
   const [showEmpty, setShowEmpty] = useState(false);
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
 
   const filtered = leads.filter((l) =>
     !search || l.name.toLowerCase().includes(search.toLowerCase()) || l.email.toLowerCase().includes(search.toLowerCase())
