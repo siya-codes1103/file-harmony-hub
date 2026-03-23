@@ -180,6 +180,14 @@ const Leads = () => {
           </p>
         </div>
       )}
+
+      {/* Lead Detail Drawer */}
+      {selectedLead && (
+        <>
+          <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setSelectedLead(null)} />
+          <LeadDetailDrawer lead={selectedLead} onClose={() => setSelectedLead(null)} />
+        </>
+      )}
     </div>
   );
 };
