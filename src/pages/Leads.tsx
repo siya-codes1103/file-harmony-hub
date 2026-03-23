@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, Plus, Filter, Pencil, ArrowRightLeft, UserPlus, Link2, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
+import LeadDetailDrawer from "@/components/leads/LeadDetailDrawer";
 
 interface Lead {
   id: string;
