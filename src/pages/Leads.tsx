@@ -91,7 +91,7 @@ const Leads = () => {
             </thead>
             <tbody className="divide-y divide-border">
               {displayLeads.map((lead) => (
-                <tr key={lead.id} className="hover:bg-accent/50 transition-colors">
+                <tr key={lead.id} className="hover:bg-accent/50 transition-colors cursor-pointer" onClick={() => setSelectedLead(lead)}>
                   <td className="px-5 py-3">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs font-medium text-foreground">
