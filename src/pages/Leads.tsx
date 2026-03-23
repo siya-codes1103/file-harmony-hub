@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, Plus, Filter, Pencil, ArrowRightLeft, UserPlus, Link2, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { toast } from "sonner";
+import LeadDetailDrawer from "@/components/leads/LeadDetailDrawer";
 
 interface Lead {
   id: string;
@@ -38,6 +39,7 @@ const Leads = () => {
   const [leads] = useState<Lead[]>(initialLeads);
   const [search, setSearch] = useState("");
   const [showEmpty, setShowEmpty] = useState(false);
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
 
   const filtered = leads.filter((l) =>
     !search || l.name.toLowerCase().includes(search.toLowerCase()) || l.email.toLowerCase().includes(search.toLowerCase())
@@ -89,7 +91,7 @@ const Leads = () => {
             </thead>
             <tbody className="divide-y divide-border">
               {displayLeads.map((lead) => (
-                <tr key={lead.id} className="hover:bg-accent/50 transition-colors">
+                <tr key={lead.id} className="hover:bg-accent/50 transition-colors cursor-pointer" onClick={() => setSelectedLead(lead)}>
                   <td className="px-5 py-3">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-xs font-medium text-foreground">
@@ -177,6 +179,14 @@ const Leads = () => {
             Quick tip: Leads you add appear here in real-time
           </p>
         </div>
+      )}
+
+      {/* Lead Detail Drawer */}
+      {selectedLead && (
+        <>
+          <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setSelectedLead(null)} />
+          <LeadDetailDrawer lead={selectedLead} onClose={() => setSelectedLead(null)} />
+        </>
       )}
     </div>
   );
