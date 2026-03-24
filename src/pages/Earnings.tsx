@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TrendingUp, Percent, Clock, RefreshCw, Award, Filter, Download, ChevronLeft, ChevronRight } from "lucide-react";
+import { TrendingUp, Percent, Clock, RefreshCw, Award, Filter, Download, ChevronLeft, ChevronRight, CreditCard, Megaphone, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
