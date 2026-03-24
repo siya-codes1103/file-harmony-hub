@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Download, ChevronLeft, ChevronRight, Users, BarChart3, DollarSign, TrendingUp } from "lucide-react";
+import { Search, Download, ChevronLeft, ChevronRight, Users, BarChart3, DollarSign, TrendingUp, Share2, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
