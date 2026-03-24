@@ -25,6 +25,9 @@ import Resources from "./pages/Resources";
 import Training from "./pages/Training";
 import Community from "./pages/Community";
 import SettingsPage from "./pages/SettingsPage";
+import Notifications from "./pages/Notifications";
+import Profile from "./pages/Profile";
+import Promotions from "./pages/Promotions";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
