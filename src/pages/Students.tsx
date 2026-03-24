@@ -36,6 +36,7 @@ const courseColors: Record<string, string> = {
 
 const Students = () => {
   const [search, setSearch] = useState("");
+  const [showEmpty, setShowEmpty] = useState(false);
   const navigate = useNavigate();
 
   const filtered = students.filter((s) =>
