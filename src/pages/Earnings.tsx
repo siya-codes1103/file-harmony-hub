@@ -22,6 +22,41 @@ const transactions: Transaction[] = [
 
 const Earnings = () => {
   const navigate = useNavigate();
+  const [showEmpty, setShowEmpty] = useState(false);
+
+  if (showEmpty) {
+    return (
+      <div className="p-6 max-w-6xl mx-auto space-y-6">
+        <h1 className="text-2xl font-bold text-foreground">Earnings</h1>
+        <div className="bg-card border border-border rounded-xl p-16 flex flex-col items-center text-center space-y-6">
+          <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+            <CreditCard className="w-10 h-10 text-primary/60" />
+          </div>
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold text-foreground">Your wallet is empty</h2>
+            <p className="text-sm text-muted-foreground max-w-md">
+              Earnings will appear here after your students enroll in courses. Track your revenue and payouts in real-time.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => navigate("/promotions")}
+              className="h-12 px-8 rounded-lg bg-primary text-primary-foreground text-sm font-bold flex items-center gap-2 hover:bg-primary/90 transition-colors"
+            >
+              <Megaphone className="w-4 h-4" /> PROMOTE COURSES
+            </button>
+            <button
+              onClick={() => navigate("/settings")}
+              className="h-12 px-8 rounded-lg border border-border bg-card text-foreground text-sm font-bold flex items-center gap-2 hover:bg-accent transition-colors"
+            >
+              <Settings className="w-4 h-4" /> PAYOUT SETTINGS
+            </button>
+          </div>
+        </div>
+        <button onClick={() => setShowEmpty(false)} className="text-xs text-primary hover:underline">Show earnings data →</button>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-6">
