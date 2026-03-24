@@ -25,6 +25,9 @@ import Resources from "./pages/Resources";
 import Training from "./pages/Training";
 import Community from "./pages/Community";
 import SettingsPage from "./pages/SettingsPage";
+import Notifications from "./pages/Notifications";
+import Profile from "./pages/Profile";
+import Promotions from "./pages/Promotions";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -62,6 +65,9 @@ const App = () => (
             <Route path="/training" element={<Training />} />
             <Route path="/community" element={<Community />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/promotions" element={<Promotions />} />
             <Route path="/templates" element={<Index />} />
           </Route>
 

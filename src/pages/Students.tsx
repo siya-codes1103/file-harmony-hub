@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Download, ChevronLeft, ChevronRight, Users, BarChart3, DollarSign, TrendingUp } from "lucide-react";
+import { Search, Download, ChevronLeft, ChevronRight, Users, BarChart3, DollarSign, TrendingUp, Share2, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
@@ -36,17 +36,33 @@ const courseColors: Record<string, string> = {
 
 const Students = () => {
   const [search, setSearch] = useState("");
+  const [showEmpty, setShowEmpty] = useState(false);
   const navigate = useNavigate();
 
   const filtered = students.filter((s) =>
     !search || s.name.toLowerCase().includes(search.toLowerCase()) || s.email.toLowerCase().includes(search.toLowerCase())
   );
 
+  const displayStudents = showEmpty ? [] : filtered;
+
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-foreground">My Students</h1>
-        <p className="text-sm text-muted-foreground mt-1">Manage and track the performance of your referred students enrolled in TradeVed courses.</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-foreground">Students</h1>
+          <p className="text-sm text-muted-foreground mt-1">Manage and track the performance of your referred students enrolled in TradeVed courses.</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowEmpty(!showEmpty)}
+            className={`h-9 px-4 rounded-lg text-xs font-medium transition-colors ${showEmpty ? "bg-primary text-primary-foreground" : "border border-border text-foreground hover:bg-accent"}`}
+          >
+            {showEmpty ? "ACTIVE" : "ACTIVE"}
+          </button>
+          <button className="h-9 px-4 rounded-lg border border-border text-xs text-muted-foreground hover:bg-accent transition-colors">
+            ARCHIVED
+          </button>
+        </div>
       </div>
 
       {/* Filters */}
