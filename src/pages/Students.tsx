@@ -43,11 +43,26 @@ const Students = () => {
     !search || s.name.toLowerCase().includes(search.toLowerCase()) || s.email.toLowerCase().includes(search.toLowerCase())
   );
 
+  const displayStudents = showEmpty ? [] : filtered;
+
   return (
     <div className="p-6 max-w-6xl mx-auto space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-foreground">My Students</h1>
-        <p className="text-sm text-muted-foreground mt-1">Manage and track the performance of your referred students enrolled in TradeVed courses.</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-foreground">Students</h1>
+          <p className="text-sm text-muted-foreground mt-1">Manage and track the performance of your referred students enrolled in TradeVed courses.</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowEmpty(!showEmpty)}
+            className={`h-9 px-4 rounded-lg text-xs font-medium transition-colors ${showEmpty ? "bg-primary text-primary-foreground" : "border border-border text-foreground hover:bg-accent"}`}
+          >
+            {showEmpty ? "ACTIVE" : "ACTIVE"}
+          </button>
+          <button className="h-9 px-4 rounded-lg border border-border text-xs text-muted-foreground hover:bg-accent transition-colors">
+            ARCHIVED
+          </button>
+        </div>
       </div>
 
       {/* Filters */}
