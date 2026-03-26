@@ -81,6 +81,26 @@ const App = () => (
             <Route path="/templates" element={<Index />} />
           </Route>
 
+          {/* Admin Auth Pages */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
+          <Route path="/admin/reset-password" element={<AdminResetPassword />} />
+
+          {/* Admin Dashboard Pages */}
+          <Route element={<AdminLayout />}>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/ca-management" element={<CAManagement />} />
+            <Route path="/admin/ca-profile/:id" element={<CAProfileDetail />} />
+            <Route path="/admin/lead-errors" element={<LeadErrors />} />
+            <Route path="/admin/lead-management" element={<LeadErrors />} />
+            <Route path="/admin/student-tracking" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Student Tracking</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+            <Route path="/admin/task-control" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Task Control</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+            <Route path="/admin/notifications" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Notifications</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+            <Route path="/admin/withdrawals" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Withdrawals Management</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+            <Route path="/admin/settings" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Settings</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+            <Route path="/admin/roles" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Roles</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
+          </Route>
+
           {/* Default redirect to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="*" element={<NotFound />} />
