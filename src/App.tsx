@@ -31,6 +31,16 @@ import Promotions from "./pages/Promotions";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Admin Pages
+import AdminLayout from "./components/admin/AdminLayout";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminForgotPassword from "./pages/admin/AdminForgotPassword";
+import AdminResetPassword from "./pages/admin/AdminResetPassword";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import CAManagement from "./pages/admin/CAManagement";
+import CAProfileDetail from "./pages/admin/CAProfileDetail";
+import LeadErrors from "./pages/admin/LeadErrors";
+
 const queryClient = new QueryClient();
 
 const App = () => (
