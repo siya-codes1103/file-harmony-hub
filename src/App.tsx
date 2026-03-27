@@ -40,6 +40,12 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import CAManagement from "./pages/admin/CAManagement";
 import CAProfileDetail from "./pages/admin/CAProfileDetail";
 import LeadErrors from "./pages/admin/LeadErrors";
+import LeadManagement from "./pages/admin/LeadManagement";
+import SyncFeedback from "./pages/admin/SyncFeedback";
+import ErrorResolution from "./pages/admin/ErrorResolution";
+import TaskControl from "./pages/admin/TaskControl";
+import TaskDetail from "./pages/admin/TaskDetail";
+import AdminNotifications from "./pages/admin/AdminNotifications";
 
 const queryClient = new QueryClient();
 
