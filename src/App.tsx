@@ -40,6 +40,12 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import CAManagement from "./pages/admin/CAManagement";
 import CAProfileDetail from "./pages/admin/CAProfileDetail";
 import LeadErrors from "./pages/admin/LeadErrors";
+import LeadManagement from "./pages/admin/LeadManagement";
+import SyncFeedback from "./pages/admin/SyncFeedback";
+import ErrorResolution from "./pages/admin/ErrorResolution";
+import TaskControl from "./pages/admin/TaskControl";
+import TaskDetail from "./pages/admin/TaskDetail";
+import AdminNotifications from "./pages/admin/AdminNotifications";
 
 const queryClient = new QueryClient();
 
@@ -92,10 +98,13 @@ const App = () => (
             <Route path="/admin/ca-management" element={<CAManagement />} />
             <Route path="/admin/ca-profile/:id" element={<CAProfileDetail />} />
             <Route path="/admin/lead-errors" element={<LeadErrors />} />
-            <Route path="/admin/lead-management" element={<LeadErrors />} />
+            <Route path="/admin/lead-management" element={<LeadManagement />} />
+            <Route path="/admin/sync-feedback" element={<SyncFeedback />} />
+            <Route path="/admin/error-resolution" element={<ErrorResolution />} />
+            <Route path="/admin/task-control" element={<TaskControl />} />
+            <Route path="/admin/task-detail/:id" element={<TaskDetail />} />
+            <Route path="/admin/notifications" element={<AdminNotifications />} />
             <Route path="/admin/student-tracking" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Student Tracking</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
-            <Route path="/admin/task-control" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Task Control</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
-            <Route path="/admin/notifications" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Notifications</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
             <Route path="/admin/withdrawals" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Withdrawals Management</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
             <Route path="/admin/settings" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Settings</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
             <Route path="/admin/roles" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Roles</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
