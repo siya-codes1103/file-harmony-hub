@@ -121,6 +121,18 @@ const App = () => (
             <Route path="/admin/roles" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Roles</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
           </Route>
 
+          {/* Super Admin Pages */}
+          <Route element={<SuperAdminLayout />}>
+            <Route path="/superadmin/admin-overview" element={<AdminOverview />} />
+            <Route path="/superadmin/user-management" element={<UserManagement />} />
+            <Route path="/superadmin/user-detail/:id" element={<UserDetail />} />
+            <Route path="/superadmin/permission-matrix" element={<PermissionMatrix />} />
+            <Route path="/superadmin/permission-feedback" element={<PermissionFeedback />} />
+            <Route path="/superadmin/audit-logs" element={<AuditLogs />} />
+            <Route path="/superadmin/feedback-states" element={<FeedbackStates />} />
+            <Route path="/superadmin/system-health" element={<SystemHealth />} />
+          </Route>
+
           {/* Default redirect to login */}
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="*" element={<NotFound />} />
