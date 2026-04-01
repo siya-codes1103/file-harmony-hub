@@ -47,6 +47,17 @@ import TaskControl from "./pages/admin/TaskControl";
 import TaskDetail from "./pages/admin/TaskDetail";
 import AdminNotifications from "./pages/admin/AdminNotifications";
 
+// Super Admin Pages
+import SuperAdminLayout from "./components/superadmin/SuperAdminLayout";
+import AdminOverview from "./pages/superadmin/AdminOverview";
+import UserManagement from "./pages/superadmin/UserManagement";
+import UserDetail from "./pages/superadmin/UserDetail";
+import PermissionMatrix from "./pages/superadmin/PermissionMatrix";
+import PermissionFeedback from "./pages/superadmin/PermissionFeedback";
+import AuditLogs from "./pages/superadmin/AuditLogs";
+import FeedbackStates from "./pages/superadmin/FeedbackStates";
+import SystemHealth from "./pages/superadmin/SystemHealth";
+
 const queryClient = new QueryClient();
 
 const App = () => (
