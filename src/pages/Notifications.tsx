@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { UserPlus, Award, CreditCard, CalendarDays, Megaphone, Clock, Search } from "lucide-react";
+import { UserPlus, Award, CreditCard, CalendarDays, Megaphone, Clock } from "lucide-react";
+import { useMeetings } from "@/contexts/MeetingContext";
 
 interface Notification {
   id: string;
@@ -12,7 +13,7 @@ interface Notification {
   read: boolean;
 }
 
-const notifications: Notification[] = [
+const staticNotifications: Notification[] = [
   {
     id: "1", title: "New Student Registration", description: " has successfully registered using your referral code.", highlight: "Sarah Jenkins",
     time: "Just now", type: "students", read: false,
@@ -45,18 +46,34 @@ const typeIcons: Record<string, typeof UserPlus> = {
 
 const tabs = ["All", "Students", "Meetings", "Rewards", "System"] as const;
 
-const Notifications = () => {
+const NotificationsPage = () => {
+  const { meetings } = useMeetings();
   const [activeTab, setActiveTab] = useState<string>("All");
-  const [items, setItems] = useState(notifications);
-  const [search, setSearch] = useState("");
 
-  const filtered = items.filter((n) => {
+  // Convert admin-scheduled meetings into notification items
+  const meetingNotifications: Notification[] = meetings.map((m) => ({
+    id: `meeting-${m.id}`,
+    title: "New Meeting Scheduled",
+    description: `"${m.title}" has been scheduled by admin.`,
+    time: new Date(m.createdAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }),
+    type: "meetings",
+    read: false,
+    meetingDate: m.date
+      ? new Date(m.date).toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" })
+      : undefined,
+  }));
+
+  const allNotifications = [...meetingNotifications, ...staticNotifications];
+  const [readIds, setReadIds] = useState<Set<string>>(new Set());
+
+  const filtered = allNotifications.filter((n) => {
     const matchesTab = activeTab === "All" || n.type === activeTab.toLowerCase();
-    const matchesSearch = !search || n.title.toLowerCase().includes(search.toLowerCase()) || n.description.toLowerCase().includes(search.toLowerCase());
-    return matchesTab && matchesSearch;
+    return matchesTab;
   });
 
-  const markAllRead = () => setItems(items.map((n) => ({ ...n, read: true })));
+  const markAllRead = () => setReadIds(new Set(allNotifications.map((n) => n.id)));
+
+  const isRead = (n: Notification) => readIds.has(n.id) || n.read;
 
   return (
     <div className="p-6 max-w-4xl mx-auto space-y-6">
@@ -76,7 +93,7 @@ const Notifications = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -96,11 +113,12 @@ const Notifications = () => {
       <div className="space-y-3">
         {filtered.map((n) => {
           const Icon = typeIcons[n.type];
+          const read = isRead(n);
           return (
             <div
               key={n.id}
               className={`bg-card border rounded-xl p-5 flex items-start gap-4 transition-colors ${
-                !n.read ? "border-primary/40 bg-primary/5" : "border-border"
+                !read ? "border-primary/40 bg-primary/5" : "border-border"
               }`}
             >
               <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
@@ -149,4 +167,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications;
+export default NotificationsPage;

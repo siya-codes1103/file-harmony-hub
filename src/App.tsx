@@ -30,6 +30,7 @@ import Profile from "./pages/Profile";
 import Promotions from "./pages/Promotions";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { MeetingProvider } from "./contexts/MeetingContext";
 
 // Admin Pages
 import AdminLayout from "./components/admin/AdminLayout";
@@ -63,6 +64,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <MeetingProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -141,6 +143,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    </MeetingProvider>
   </QueryClientProvider>
 );
 
