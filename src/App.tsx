@@ -30,6 +30,7 @@ import Profile from "./pages/Profile";
 import Promotions from "./pages/Promotions";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { MeetingProvider } from "./contexts/MeetingContext";
 
 // Admin Pages
 import AdminLayout from "./components/admin/AdminLayout";
