@@ -116,6 +116,7 @@ const App = () => (
             <Route path="/admin/task-control" element={<TaskControl />} />
             <Route path="/admin/task-detail/:id" element={<TaskDetail />} />
             <Route path="/admin/notifications" element={<AdminNotifications />} />
+            <Route path="/admin/meetings" element={<MeetingTracker />} />
             <Route path="/admin/student-tracking" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Student Tracking</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
             <Route path="/admin/withdrawals" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Withdrawals Management</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
             <Route path="/admin/settings" element={<div className="p-6"><h1 className="text-2xl font-bold text-[hsl(30,5%,15%)]">Admin Settings</h1><p className="text-sm text-[hsl(30,5%,50%)] mt-2">Coming soon...</p></div>} />
