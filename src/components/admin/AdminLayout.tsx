@@ -11,6 +11,7 @@ const adminNavItems = [
   { to: "/admin/student-tracking", icon: Users, label: "Student Tracking" },
   { to: "/admin/lead-management", icon: FileText, label: "Lead Management" },
   { to: "/admin/task-control", icon: CheckSquare, label: "Task Control" },
+  { to: "/admin/meetings", icon: CheckSquare, label: "Meetings" },
   { to: "/admin/notifications", icon: Bell, label: "Notifications" },
   { to: "/admin/withdrawals", icon: Wallet, label: "Withdrawals" },
   { to: "/admin/settings", icon: Settings, label: "Settings" },

@@ -46,6 +46,7 @@ import ErrorResolution from "./pages/admin/ErrorResolution";
 import TaskControl from "./pages/admin/TaskControl";
 import TaskDetail from "./pages/admin/TaskDetail";
 import AdminNotifications from "./pages/admin/AdminNotifications";
+import MeetingTracker from "./pages/admin/MeetingTracker";
 
 // Super Admin Pages
 import SuperAdminLayout from "./components/superadmin/SuperAdminLayout";
