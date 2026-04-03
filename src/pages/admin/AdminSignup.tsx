@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Lock, Eye, EyeOff, ArrowRight, AtSign, Shield, User, Building2, Globe } from "lucide-react";
+import { Lock, Eye, EyeOff, ArrowRight, AtSign, Shield, User, Building2, Globe, Phone } from "lucide-react";
 import { toast } from "sonner";
 
 const AdminSignup = () => {
