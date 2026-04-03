@@ -135,6 +135,13 @@ const AdminLogin = () => {
               </button>
             </form>
 
+            <p className="text-center text-sm text-[hsl(30,5%,50%)]">
+              Don't have an account?{" "}
+              <Link to="/admin/signup" className="text-[hsl(72,70%,35%)] font-semibold hover:underline">
+                Create Account
+              </Link>
+            </p>
+
             <div className="border-t border-[hsl(50,15%,85%)] pt-5 flex items-center justify-between text-xs text-[hsl(30,5%,55%)]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[hsl(72,70%,45%)]" />

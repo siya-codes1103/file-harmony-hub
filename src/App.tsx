@@ -105,6 +105,8 @@ const App = () => (
 
           {/* Admin Auth Pages */}
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route path="/admin/verify-email" element={<AdminVerifyEmail />} />
           <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
           <Route path="/admin/reset-password" element={<AdminResetPassword />} />
 
