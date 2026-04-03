@@ -127,6 +127,21 @@ const AdminSignup = () => {
                 </div>
               </div>
 
+              {/* Phone */}
+              <div>
+                <label className="block text-xs font-bold text-[hsl(30,5%,35%)] mb-2 uppercase tracking-wider">Phone Number</label>
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(30,5%,55%)]" />
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+91 XXXXX XXXXX"
+                    className="w-full h-13 pl-11 pr-4 rounded-xl bg-[hsl(50,15%,93%)] border border-[hsl(50,15%,85%)] text-[hsl(30,5%,15%)] placeholder:text-[hsl(30,5%,60%)] focus:outline-none focus:ring-2 focus:ring-[hsl(72,70%,45%)] text-sm"
+                  />
+                </div>
+              </div>
+
               {/* Password */}
               <div>
                 <label className="block text-xs font-bold text-[hsl(30,5%,35%)] mb-2 uppercase tracking-wider">Secure Passphrase</label>
