@@ -35,6 +35,8 @@ import { MeetingProvider } from "./contexts/MeetingContext";
 // Admin Pages
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminLogin from "./pages/admin/AdminLogin";
+import AdminSignup from "./pages/admin/AdminSignup";
+import AdminVerifyEmail from "./pages/admin/AdminVerifyEmail";
 import AdminForgotPassword from "./pages/admin/AdminForgotPassword";
 import AdminResetPassword from "./pages/admin/AdminResetPassword";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -103,6 +105,8 @@ const App = () => (
 
           {/* Admin Auth Pages */}
           <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route path="/admin/verify-email" element={<AdminVerifyEmail />} />
           <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
           <Route path="/admin/reset-password" element={<AdminResetPassword />} />
 
