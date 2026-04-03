@@ -17,7 +17,7 @@ const AdminSignup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !email || !password || !confirmPassword) {
+    if (!fullName || !email || !phone || !password || !confirmPassword) {
       toast.error("Please fill in all fields");
       return;
     }
